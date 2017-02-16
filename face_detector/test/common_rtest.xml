@@ -13,7 +13,6 @@
     <test test-name="hztest_test" pkg="rostest" type="hztest" name="$(arg testnode_name)" retry="$(arg RETRY_TEST)">
       <param name="topic" value="face_detector/people_tracker_measurements_array" />
       <param name="hz" value="0.0" />
-      <param name="hzerror" value="0.0" />    
       <param name="test_duration" value="15.0" />
     </test>
   </group>
