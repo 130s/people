@@ -10,7 +10,7 @@
   <group unless="$(arg expected_success)">
     <node pkg="rosbag" type="play" name="play" args="-r 0.5 $(find face_detector)/test/face_detector_noface_test_diamondback.bag"/>
 
-    <test test-name="hztest_test" pkg="rostest" type="hztest" name="$(arg testnode_name)" retry="$(arg RETRY_TEST)">
+    <test test-name="hztest_noface_$(arg testnode_name)" pkg="rostest" type="hztest" name="$(arg testnode_name)" retry="$(arg RETRY_TEST)">
       <param name="topic" value="face_detector/people_tracker_measurements_array" />
       <param name="hz" value="0.0" />
       <param name="test_duration" value="15.0" />
@@ -19,7 +19,7 @@
   <group if="$(arg expected_success)">
     <node pkg="rosbag" type="play" name="play" args="-r 0.5 $(find face_detector)/test/face_detector_withface_test_diamondback.bag"/>
 
-    <test test-name="hztest_test" pkg="rostest" type="hztest" name="$(arg testnode_name)" retry="$(arg RETRY_TEST)">
+    <test test-name="hztest_withface_$(arg testnode_name)" pkg="rostest" type="hztest" name="$(arg testnode_name)" retry="$(arg RETRY_TEST)">
       <param name="topic" value="face_detector/people_tracker_measurements_array" />
       <param name="hz" value="$(arg hz)" />
       <param name="hzerror" value="$(arg hz_error)" />    
