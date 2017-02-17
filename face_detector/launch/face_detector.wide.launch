@@ -1,7 +1,8 @@
 <launch>
 
   <arg name="camera" default="wide_stereo" />
-  <arg name="image_topic" default="image_rect" />
+  <arg name="rgb_ns" default="depth_registered" />
+  <arg name="image_topic" default="image_rect_raw" />
   <arg name="fixed_frame" default="wide_stereo_optical_frame" />
 
   <arg name="do_continuous" default="true" />  
